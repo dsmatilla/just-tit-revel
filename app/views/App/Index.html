@@ -1,0 +1,12 @@
+{{template "header.html" .}}
+
+
+  {{ if .Result.Flag }}
+    {{ template "container_search" .Result }}
+  {{ end }}
+  {{ if .Embed }}
+    {{ template "container_video" . }}
+  {{ end }}
+
+
+{{template "footer.html" .}}

@@ -1,0 +1,31 @@
+# Routes Config
+#
+# This file defines all application routes (Higher priority routes first)
+#
+
+module:testrunner
+# module:jobs
+
+
+GET     /                                       App.Index
+GET     /:search.html                           App.Search
+GET     /images/:image                          App.ImageProxy
+GET     /:provider/:id.html                     App.Video
+
+GET     /public/*filepath                       Static.Serve("public")
+GET     /favicon.ico                            Static.Serve("public", "/img/favicon.ico")
+GET     /service-worker.js                      Static.Serve("public", "/js/service-worker.js")
+GET     /robots.txt                             Static.Serve("public", "/robots.txt")
+GET     /manifest.json                          Static.Serve("public", "/manifest.json")
+
+
+
+# Catch all, this will route any request into the controller path
+#
+#                    **** WARNING ****
+# Enabling this exposes any controller and function to the web.
+# ** This is a serious security issue if used online **
+#
+# For rapid development uncomment the following to add new controller.action endpoints
+# without having to add them to the routes table.
+# *       /:controller/:action                    :controller.:action
