@@ -32,6 +32,12 @@ func (c App) Index() revel.Result {
 	if len(search) > 0 {
 		return c.Redirect(search + ".html")
 	}
+
+	values := map[string]interface{}{
+		"PageTitle":    "Just Tit",
+		"PageMetaDesc": "The most optimized adult video search engine",
+	}
+	c.ViewArgs = values
 	return c.Render()
 }
 

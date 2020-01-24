@@ -1,4 +1,4 @@
-const version = "0.1";
+const version = "0.2";
 const cacheName = `just-tit-${version}`;
 self.addEventListener('install', e => {
     e.waitUntil(caches.open(cacheName).then(cache => {
