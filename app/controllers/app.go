@@ -48,7 +48,7 @@ func (c App) Search() revel.Result {
 	values := map[string]interface{}{
 		"PageTitle": fmt.Sprintf("Search results for %s", search),
 		"Result": result,
-		"PageDesc": fmt.Sprintf("Search results for %s", search),
+		"PageMetaDesc": fmt.Sprintf("Search results for %s", search),
 		"Search": search,
 	}
 	c.ViewArgs = values
