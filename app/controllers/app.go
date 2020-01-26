@@ -279,7 +279,7 @@ func doSearch(search string) searchResult {
 
 		waitGroup.Wait()
 
-		go cache.Set(search, result, 24 * time.Hour)
+		go cache.Set(search, result, 5 * time.Minute)
 		return result
 	}
 }
